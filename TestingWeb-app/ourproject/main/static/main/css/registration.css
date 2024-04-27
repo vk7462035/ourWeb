@@ -1,0 +1,242 @@
+ .u-section-1 {
+  background-image: none;
+  min-height: 760px;
+}
+
+.u-section-1 .u-text-1 {
+  letter-spacing: 3px;
+  font-size: 2.25rem;
+  font-weight: normal;
+  margin: 70px 135px 0 calc(((100% - 1140px) / 2) + 806px);
+}
+
+.u-section-1 .u-form-1 {
+  height: 469px;
+  margin: 25px 0 0 calc(((100% - 1140px) / 2) + 620px);
+}
+
+.u-section-1 .u-form-group-2 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-form-group-3 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-form-group-6 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-btn-1 {
+  background-image: none;
+}
+
+.u-section-1 .u-btn-2 {
+  letter-spacing: 3px;
+  background-image: none;
+  font-size: 1rem;
+  margin: -77px calc(((100% - 1140px) / 2) + 219px) 0 auto;
+}
+
+.u-section-1 .u-image-1 {
+  width: 425px;
+  height: 425px;
+  margin: -425px auto 0 calc(((100% - 1140px) / 2) + 23px);
+}
+
+.u-section-1 .u-text-2 {
+  letter-spacing: 3px;
+  font-size: 1.25rem;
+  margin: 85px auto 0 calc(((100% - 1140px) / 2) + 391px);
+}
+
+.u-section-1 .u-btn-3 {
+  border-style: solid;
+  font-size: 1.25rem;
+  margin: -29px calc(((100% - 1140px) / 2) + 303px) 60px auto;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+   .u-section-1 {
+    min-height: 715px;
+  }
+
+  .u-section-1 .u-text-1 {
+    width: auto;
+    margin-top: 50px;
+    margin-right: 113px;
+    margin-left: calc(((100% - 940px) / 2) + 628px);
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 475px;
+    margin-left: calc(((100% - 940px) / 2) + 515px);
+  }
+
+  .u-section-1 .u-btn-1 {
+    padding: 0 30px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-top: -58px;
+    margin-right: calc(((100% - 940px) / 2) + 123px);
+    padding: 10px 30px 11px;
+  }
+
+  .u-section-1 .u-image-1 {
+    margin-top: -447px;
+    margin-left: calc(((100% - 940px) / 2) + 25px);
+  }
+
+  .u-section-1 .u-text-2 {
+    width: auto;
+    margin-top: 104px;
+    margin-left: calc(((100% - 940px) / 2) + 268px);
+  }
+
+  .u-section-1 .u-btn-3 {
+    margin-right: calc(((100% - 940px) / 2) + 218px);
+    margin-bottom: 49px;
+  }
+}
+
+@media (max-width: 991px) {
+   .u-section-1 {
+    min-height: 631px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 117px;
+    margin-left: calc(((100% - 720px) / 2) + 451px);
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 406px;
+    margin-top: 7px;
+    margin-left: calc(((100% - 720px) / 2) + 349px);
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-top: -64px;
+    margin-right: calc(((100% - 720px) / 2) + 122px);
+    margin-left: 413px;
+    padding: 6px 6px 7px 5px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 367px;
+    height: 367px;
+    margin-top: -415px;
+    margin-left: calc(((100% - 720px) / 2) + -25px);
+  }
+
+  .u-section-1 .u-text-2 {
+    font-size: 1.125rem;
+    margin-top: 98px;
+    margin-left: 205px;
+  }
+
+  .u-section-1 .u-btn-3 {
+    font-size: 1.125rem;
+    margin-top: -30px;
+    margin-right: calc(((100% - 720px) / 2));
+    margin-left: 440px;
+  }
+}
+
+@media (max-width: 767px) {
+   .u-section-1 {
+    min-height: 920px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-top: 357px;
+    margin-right: 205px;
+    margin-left: calc(((100% - 540px) / 2) + 183px);
+  }
+
+  .u-section-1 .u-form-1 {
+    height: 453px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-btn-1 {
+    width: 46%;
+    padding: 2px 0;
+  }
+
+  .u-section-1 .u-btn-2 {
+    font-size: 0.875rem;
+    margin-top: -63px;
+    margin-right: auto;
+    margin-left: 133px;
+    padding-top: 7px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 327px;
+    height: 327px;
+    margin-top: -812px;
+    margin-right: calc(((100% - 540px) / 2) + 93px);
+    margin-left: auto;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: 525px;
+    margin-left: 117px;
+  }
+
+  .u-section-1 .u-btn-3 {
+    margin-right: calc(((100% - 540px) / 2));
+    margin-bottom: 30px;
+    margin-left: 348px;
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-1 {
+    min-height: 855px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 1.125rem;
+    width: 160px;
+    margin-top: 271px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 340px;
+    margin-top: 12px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-left: calc(((100% - 340px) / 2) + 15px);
+    padding-top: 4px;
+    padding-bottom: 6px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 243px;
+    height: 243px;
+    margin-top: -711px;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-text-2 {
+    font-size: 1rem;
+    margin-top: 499px;
+    margin-left: auto;
+  }
+
+  .u-section-1 .u-btn-3 {
+    font-size: 1rem;
+    margin: 0 auto 51px;
+  }
+}

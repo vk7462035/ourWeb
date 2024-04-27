@@ -1,0 +1,73 @@
+/* Стили для всей страницы */
+body {
+  font-family: Montserrat, sans-serif; /* Шрифт для всего текста */
+  background-color: #f5f7fa; /* Синий цвет в шестнадцатеричном формате */
+  margin: 0; /* Убираем стандартные отступы */
+}
+.u-block-1921-2 {
+  position: absolute;
+  bottom: 10px;
+  margin: 30; /* Убираем стандартные отступы */
+  padding: 0; /* Убираем стандартные отступы */
+}
+/* Стили для вопросов и ответов */
+.question {
+  display: flex; /* Используем flexbox для выравнивания элементов в ряд */
+  justify-content: left; /* Располагаем элементы слева */
+  align-items: center; /* Центрируем элементы по вертикали */
+  margin-left: 30px;
+}
+body, html {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+/* Стили для заголовка */
+h1 {
+  color: #4f758a;
+  text-align: center; /* Центрируем текст заголовка */
+  font-size: 2em; /* Размер шрифта заголовка */
+  margin-top: 50px; /* Отступ сверху */
+}
+/* Стили для параграфа */
+p {
+  text-align: justify; /* Выравнивание текста по ширине */
+  text-indent: 20px; /* Отступ первой строки абзаца */
+}
+
+
+/* Стили для меток радиокнопок */
+label {
+  display: inline-block; /* Используем inline-block для выравнивания меток в одну строку */
+  margin-top: 10px; /* Отступ сверху */
+  margin-bottom: 5px; /* Отступ снизу */
+}
+/* Стили для отмеченных радиокнопок */
+input[type="radio"]:checked + label {
+  color: #333; /* Цвет текста выбранной метки */
+  font-weight: bold; /* Полужирное начертание текста выбранной метки */
+}
+form {
+  float: right;
+  margin-right: 20px; /* Отступ справа */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+/* Стили для формы при наведении */
+form:hover {
+  background-color: #4f758a; /* Белый цвет фона формы при наведении */
+  color: white; /* Синий цвет текста при наведении */
+}
+/* Стили для кнопки отправки */
+form input[type="submit"] {
+  background-color: #4f758a; /* Белый цвет фона кнопки */
+  color: white; /* Синий цвет текста кнопки */
+  border: none; /* Убираем стандартную границу */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  border-radius: 12; /* Убираем скругление углов */
+  cursor: pointer; /* Курсор в виде указателя при наведении */
+  transition: background-color 0.3s; /* Плавное изменение фона при наведении */
+}
+/* Стили для кнопки при наведении */
+form input[type="submit"]:hover {
+  background-color: white; /* Синий цвет фона кнопки при наведении */
+  color: #4f758a; /* Белый цвет текста кнопки при наведении */
+}

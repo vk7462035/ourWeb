@@ -1,0 +1,12 @@
+{% block content %}
+    <h2>Вы вышли из своей учетной записи</h2>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Выход</button>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}">Войти снова</a>
+        </small>
+    </div>
+{% endblock content %}

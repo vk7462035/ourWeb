@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'main/css/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'main/css/registration.css' %}" media="screen">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+</head>
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru">
+    <section class="u-clearfix u-palette-5-light-3 u-section-1" id="sec-02b0">
+        <h3 class="u-custom-font u-font-montserrat u-text u-text-custom-color-8 u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">Регистрация</h3>
+        <div class="u-form u-form-1">
+            <form method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="u-form-group">
+                    <label for="{{ form.username.id_for_label }}" class="u-label">Имя пользователя:</label>
+                    {{ form.username }}
+                    {{ form.username.errors }}
+                </div>
+                <div class="u-form-group">
+                    <label for="{{ form.email.id_for_label }}" class="u-label">Email:</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+                <div class="u-form-group">
+                    <label for="{{ form.password1.id_for_label }}" class="u-label">Пароль:</label>
+                    {{ form.password1 }}
+                    {{ form.password1.errors }}
+                </div>
+                <div class="u-form-group">
+                    <label for="{{ form.password2.id_for_label }}" class="u-label">Подтвердите пароль:</label>
+                    {{ form.password2 }}
+                    {{ form.password2.errors }}
+                </div>
+                <div class="u-align-left u-form-group u-form-submit">
+                    <button type="submit" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-8 u-custom-font u-font-montserrat u-hover-white u-text-hover-custom-color-8 u-btn-1">Зарегистрироваться</button>
+                </div>
+                <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
+                <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
+            </form>
+        </div>
+        <a href="{% url 'home' %}" class="u-border-none u-btn u-button-style u-custom-color-8 u-custom-font u-font-montserrat u-hover-white u-text-hover-custom-color-8 u-btn-2">На главную</a>
+        <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{% static 'main/img/3d-render-smartphone-with-hand-fill-online-survey-Photoroom.png-Photoroom.png' %}" alt="" data-image-width="1280" data-image-height="1280">
+        <h5 class="u-custom-font u-font-montserrat u-text u-text-custom-color-8 u-text-default u-text-2">Аккаунт уже есть?/&nbsp;</h5>
+        <a href="{% url 'login' %}" class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-button-style u-custom-font u-font-montserrat u-hover-none u-none u-text-custom-color-8 u-text-hover-custom-color-9 u-btn-3">Авторизироваться</a>
+    </section>
+
+    <section class="u-backlink u-clearfix u-grey-80">
+        <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+            <span>Website Templates</span>
+        </a>
+        <p class="u-text">
+            <span>created with</span>
+        </p>
+        <a class="u-link" href="" target="_blank">
+            <span>Website Builder Software</span>
+        </a>.
+    </section>
+</body>
+</html>
+
