@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey App</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'survey_create' %}">Create Survey</a>
+        <!-- Другие ссылки -->
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

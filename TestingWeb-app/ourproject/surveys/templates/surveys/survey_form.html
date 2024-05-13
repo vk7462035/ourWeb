@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        .question-form, .choice-form {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .add-question, .add-choice {
+            display: block;
+            margin-top: 10px;
+        }
+        .remove-choice {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 2px 5px;
+            margin-left: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'survey_create' %}">Create Survey</a>
+    </nav>
+    <h2>Create Survey</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.as_p }}
+        </div>
+        <h3>Questions</h3>
+        <div id="questions">
+            {{ questions.management_form }}
+            {% for question in questions %}
+                <div class="question-form" data-form="{{ forloop.counter }}">
+                    {{ question.as_p }}
+                    <h4>Choices</h4>
+                    <div class="choices">
+                        {% for choice in question.choice_set.all %}
+                            <div class="choice-form">
+                                <div>
+                                    <label for="id_questions-{{ forloop.parentloop.counter0 }}-choices-{{ forloop.counter0 }}-choice_text">Choice:</label>
+                                    <input type="text" name="questions-{{ forloop.parentloop.counter0 }}-choices-choice_text" maxlength="300" required id="id_questions-{{ forloop.parentloop.counter0 }}-choices-{{ forloop.counter0 }}-choice_text" value="{{ choice.choice_text }}">
+                                </div>
+                                <button type="button" class="remove-choice">-</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="add-choice">Add Choice</button>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" class="add-question">Add Question</button>
+        <button type="submit">Save Survey</button>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let questionFormCounter = {{ questions.total_form_count }};
+            let choiceFormCounter = 0;
+
+            document.querySelector('.add-question').addEventListener('click', function() {
+                const questionsDiv = document.getElementById('questions');
+                const newQuestionForm = document.createElement('div');
+                newQuestionForm.classList.add('question-form');
+                newQuestionForm.dataset.form = questionFormCounter;
+                newQuestionForm.innerHTML = `
+                    <div>
+                        <label for="id_questions-${questionFormCounter}-text">Text:</label>
+                        <input type="text" name="questions-${questionFormCounter}-text" maxlength="300" required id="id_questions-${questionFormCounter}-text">
+                    </div>
+                    <div>
+                        <label for="id_questions-${questionFormCounter}-order">Order:</label>
+                        <input type="number" name="questions-${questionFormCounter}-order" required id="id_questions-${questionFormCounter}-order">
+                    </div>
+                    <div>
+                        <label for="id_questions-${questionFormCounter}-choice_type">Choice type:</label>
+                        <select name="questions-${questionFormCounter}-choice_type" id="id_questions-${questionFormCounter}-choice_type">
+                            <option value="single">Выбор только одного ответа</option>
+                            <option value="multiple">Выбор нескольких ответов</option>
+                        </select>
+                    </div>
+                    <h4>Choices</h4>
+                    <div class="choices">
+                        <input type="hidden" name="questions-${questionFormCounter}-choices-TOTAL_FORMS" value="0">
+                        <input type="hidden" name="questions-${questionFormCounter}-choices-INITIAL_FORMS" value="0">
+                        <input type="hidden" name="questions-${questionFormCounter}-choices-MIN_NUM_FORMS" value="0">
+                        <input type="hidden" name="questions-${questionFormCounter}-choices-MAX_NUM_FORMS" value="1000">
+                    </div>
+                    <button type="button" class="add-choice">Add Choice</button>
+                `;
+                questionsDiv.appendChild(newQuestionForm);
+                questionFormCounter++;
+                updateManagementForm();
+            });
+
+            function updateManagementForm() {
+                document.querySelector('input[name="questions-TOTAL_FORMS"]').value = questionFormCounter;
+            }
+
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('add-choice')) {
+                    const questionForm = event.target.closest('.question-form');
+                    const choicesDiv = questionForm.querySelector('.choices');
+                    const questionIndex = questionForm.dataset.form;
+                    const choiceIndex = choicesDiv.querySelectorAll('.choice-form').length;
+                    const newChoiceForm = document.createElement('div');
+                    newChoiceForm.classList.add('choice-form');
+                    newChoiceForm.innerHTML = `
+                        <div>
+                            <label for="id_questions-${questionIndex}-choices-${choiceIndex}-choice_text">Choice:</label>
+                            <input type="text" name="questions-${questionIndex}-choices-choice_text" maxlength="300" required id="id_questions-${questionIndex}-choices-${choiceIndex}-choice_text">
+                        </div>
+                        <button type="button" class="remove-choice">-</button>
+                    `;
+                    choicesDiv.appendChild(newChoiceForm);
+                    choicesDiv.querySelector('input[name$="TOTAL_FORMS"]').value = choiceIndex + 1;
+                }
+
+                if (event.target.classList.contains('remove-choice')) {
+                    const choiceForm = event.target.closest('.choice-form');
+                    choiceForm.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
